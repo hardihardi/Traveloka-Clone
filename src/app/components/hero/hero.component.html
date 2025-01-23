@@ -15,7 +15,7 @@
               'hover:border-solid' : !item.isActive,
             }">
               <span class="icon">
-                <img [src]="item.path" [alt]="item.label">
+                <img [src]="item.path" alt="{{ item.label }}" [title]="item.label">
               </span>
               <span class="font-bold " [ngClass]="item.isActive ? 'text-black' : 'text-gray-300' ">
                 {{ item.label }}
@@ -45,14 +45,14 @@
 
           <div class="flex gap-4 items-center right-form">
             <div class="text-gray-700 bg-transparent bg-opacity-50 w-rp">
-              <select  class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
+              <select title="Class Selection" class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
                 <option>Economy</option>
                 <option>Business</option>
                 <option>First Class</option>
               </select>
             </div>
             <div class="text-gray-700 bg-gray bg-opacity-50 w-rp">
-              <select  class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
+              <select title="Class Selection" class="border border-white rounded-md shadow-sm p-2 bg-opacity-50">
                 <option>Economy</option>
                 <option>Business</option>
                 <option>First Class</option>

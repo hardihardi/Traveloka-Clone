@@ -6,20 +6,32 @@
   class="fixed top-0 left-0 w-full transition-all duration-300 z-50"
 >
   <div class="container mx-auto flex flex-col px-6 py-4">
-
     <div class="flex items-center justify-between mb-4 header-top">
       <div class="logo">
-         <h2
-         [class.text-white]="!isScrolled && isHomePage"
-          [class.text-gray-700]="isScrolled && isHomePage"
-          [ngClass]="textClass"
-          class="text-2xl cursor-pointer">
-          Traveloka Clone
-
-          <!-- @if (isHomePage) {
-            Traveloka
-          } -->
-         </h2>
+        <a href="/" title="Home">
+          <img
+            loading="eager"
+            importance="high"
+            src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/f/fbab4f587da2242fbe9858fe3e5ba717.svg"
+            decoding="async"
+            width="135"
+            height="43"
+            alt="Traveloka Logo"
+            class="logo-img"
+            [class.hidden]="isScrolled"
+          />
+          <img
+            loading="eager"
+            importance="high"
+            src="https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/97f3e7a54e9c6987283b78e016664776.svg"
+            decoding="async"
+            width="135"
+            height="43"
+            class="logo-img-alt"
+            alt="Traveloka Alternate Logo"
+            [class.hidden]="!isScrolled"
+          />
+        </a>
       </div>
 
       <div class="flex items-center gap-4">
@@ -27,40 +39,51 @@
           [class.text-white]="!isScrolled && isHomePage"
           [class.text-gray-700]="isScrolled && isHomePage"
           [ngClass]="textClass"
-          class="hidden md:flex space-x-6 text-sm" aria-label="Menu utama">
+          class="hidden md:flex space-x-6 text-sm"
+          aria-label="Menu utama"
+        >
           @for (item of topMenu; track $index) {
-            <a href="#" class="font-bold hover:bg-black hover:bg-opacity-50 py-2 px-2 rounded">{{ item.label }}</a>
+          <a
+            href="#"
+            class="font-bold hover:bg-black hover:bg-opacity-50 py-2 px-2 rounded"
+            >{{ item.label }}</a
+          >
           }
         </nav>
 
-
         <div class="flex items-center space-x-4">
           <button
-              [class.text-white]="!isScrolled && isHomePage"
-              [class.text-gray-700]="isScrolled"
-              [ngClass]="textClass"
-              class="text-sm border border-solid border-neutral-300 rounded px-4 py-2">Log In</button>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded ">Daftar</button>
+            [class.text-white]="!isScrolled && isHomePage"
+            [class.text-gray-700]="isScrolled"
+            [ngClass]="textClass"
+            class="text-sm border border-solid border-neutral-300 rounded px-4 py-2"
+          >
+            Log In
+          </button>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded">
+            Daftar
+          </button>
         </div>
       </div>
     </div>
 
-
-
     <div class="space-x-4 header-bottom">
       <div class="absolute w-full line"></div>
       <nav
-
-        class="hidden md:flex space-x-6 text-sm flex items-center"
-        aria-label="Menu produk">
+        class="hidden md:flex space-x-6 text-sm items-center"
+        aria-label="Menu produk"
+      >
         @for (item of bottomMenu; track $index) {
-          <span class="flex-auto">
-            <a href="#" class="py-2 px-2 font-bold hover:bg-black hover:bg-opacity-50 rounded"
+        <span class="flex-auto">
+          <a
+            href="#"
+            class="py-2 px-2 font-bold hover:bg-black hover:bg-opacity-50 rounded"
             [class.text-white]="!isScrolled && isHomePage"
             [class.text-gray-800]="isScrolled && isHomePage"
             [ngClass]="textClass"
-            >{{ item.label }}</a>
-          </span>
+            >{{ item.label }}</a
+          >
+        </span>
         }
       </nav>
     </div>
